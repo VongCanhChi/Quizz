@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Topic"
+    android:background="@color/primary_quizz"
+    >
+    <TextView
+        android:id="@+id/tv_topic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chọn chủ đề của bạn"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20sdp"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_100sdp"
+        android:layout_marginBottom="@dimen/_20sdp"/>
+    <TextView
+        android:id="@+id/tv_center"
+        android:layout_width="@dimen/_10sdp"
+        android:layout_below="@id/tv_topic"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_height="@dimen/_10sdp"/>
+
+    <LinearLayout
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:background="@drawable/white_btn_shape"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/ln_nature"
+        android:layout_below="@+id/tv_topic"
+        android:layout_toLeftOf="@id/tv_center">
+
+        <ImageView
+            android:layout_width="@dimen/_68sdp"
+            android:layout_height="@dimen/_68sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/nature"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:text="Tự nhiên"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ln_geography"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_below="@+id/tv_topic"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@id/tv_center"
+        android:background="@drawable/white_btn_shape"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/_68sdp"
+            android:layout_height="@dimen/_68sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/geographic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Địa lý"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@id/ln_nature"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:background="@drawable/white_btn_shape"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_alignLeft="@id/ln_nature"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:id="@+id/ln_math">
+
+        <ImageView
+            android:layout_width="@dimen/_68sdp"
+            android:layout_height="@dimen/_68sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/math_icon"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:text="Toán"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:background="@drawable/white_btn_shape"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_toRightOf="@id/ln_math"
+        android:layout_below="@id/ln_nature"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:id="@+id/ln_quiz">
+
+        <ImageView
+            android:layout_width="@dimen/_68sdp"
+            android:layout_height="@dimen/_68sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/quiz_mini_icon"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:text="Đố vui"/>
+    </LinearLayout>
+
+</RelativeLayout>

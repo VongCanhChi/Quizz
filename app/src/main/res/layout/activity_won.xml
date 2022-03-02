@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_quizz"
+    tools:context=".WonActivity">
+
+    <RelativeLayout
+        android:id="@+id/tool_bar"
+        android:background="#1C70C5"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp">
+
+        <ImageView
+            android:id="@+id/ic_back"
+            android:onClick="backToMenu"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:background="@drawable/back_icon"
+            android:backgroundTint="@color/white"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/ic_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+
+            android:text="Exit"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl2"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="@dimen/_170sdp"
+        android:layout_height="@dimen/_170sdp"
+        android:layout_below="@+id/tool_bar"
+        android:layout_centerHorizontal="true">
+
+        <com.mikhaellopez.circularprogressbar.CircularProgressBar
+            android:id="@+id/circularProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cpb_background_progressbar_color="@color/red"
+            app:cpb_background_progressbar_width="@dimen/_10sdp"
+            app:cpb_progress_direction="to_right"
+            app:cpb_progressbar_color="@color/green"
+            app:cpb_progressbar_width="@dimen/_15sdp"
+            app:cpb_progress_max="4"
+            app:cpb_progress="1"
+            app:cpb_round_border="false" />
+
+        <TextView
+            android:id="@+id/result_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="1/4"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_35sdp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_below="@id/rl2">
+
+        <LinearLayout
+            android:id="@+id/btn_share"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="@dimen/_40sdp"
+            android:layout_marginEnd="@dimen/_40sdp"
+            android:background="@drawable/next_btn_shape"
+            android:backgroundTint="@color/next_btn_color"
+            android:layout_centerInParent="true">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Share your score!"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_250sdp"
+            android:background="@drawable/congrtulation"/>
+    </RelativeLayout>
+
+</RelativeLayout>
