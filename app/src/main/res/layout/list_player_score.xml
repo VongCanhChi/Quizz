@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_quizz">
+
+    <TextView
+        android:id="@+id/tv_player_score"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Điểm người chơi"
+        android:textSize="@dimen/_30sdp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/_10sdp"/>
+
+    <ListView
+        android:layout_below="@id/tv_player_score"
+        android:id="@+id/sv_list_score"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Trở lại"
+        android:textColor="@color/white"
+        android:id="@+id/btn_back_to_score_view"
+        android:backgroundTintMode="multiply"
+        android:layout_marginBottom="@dimen/_20sdp"/>
+
+</RelativeLayout>

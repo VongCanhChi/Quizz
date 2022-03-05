@@ -10,11 +10,15 @@
         <entry key="..\:/Android Application/Quizz/app/src/main/res/drawable/ic_nature_background.xml" value="0.176" />
         <entry key="..\:/Android Application/Quizz/app/src/main/res/drawable/next_btn_shape.xml" value="0.215" />
         <entry key="..\:/Android Application/Quizz/app/src/main/res/drawable/time_out_btn_shape.xml" value="0.215" />
+        <entry key="..\:/Android Application/Quizz/app/src/main/res/drawable/view_high_score_btn.xml" value="0.191" />
         <entry key="..\:/Android Application/Quizz/app/src/main/res/drawable/white_btn_shape.xml" value="0.2" />
         <entry key="..\:/Android Application/Quizz/app/src/main/res/layout/activity_dashboard.xml" value="0.264" />
         <entry key="..\:/Android Application/Quizz/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Android Application/Quizz/app/src/main/res/layout/activity_topic.xml" value="0.264" />
         <entry key="..\:/Android Application/Quizz/app/src/main/res/layout/activity_won.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android Application/Quizz/app/src/main/res/layout/list_player_score.xml" value="0.24947916666666667" />
+        <entry key="..\:/Android Application/Quizz/app/src/main/res/layout/store_high_score_dialog.xml" value="0.24947916666666667" />
+        <entry key="..\:/Android Application/Quizz/app/src/main/res/layout/text_view_score_adappter.xml" value="0.264" />
         <entry key="..\:/Android Application/Quizz/app/src/main/res/layout/time_out_dialog.xml" value="0.264" />
         <entry key="..\:/Android Application/Quizz/app/src/main/res/mipmap-anydpi-v26/ic_georaphic.xml" value="0.1945" />
       </map>

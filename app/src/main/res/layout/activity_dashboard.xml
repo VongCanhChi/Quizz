@@ -26,6 +26,17 @@
             app:tint="@color/white" />
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:59"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20sdp"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/tv_time_count"/>
+
+        <TextView
             android:id="@+id/ic_exit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -73,27 +73,51 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
-        android:layout_marginTop="@dimen/_30sdp"
-        android:layout_below="@id/rl2">
+        android:layout_height="@dimen/_120sdp"
+        android:layout_below="@id/rl2"
+        android:layout_marginTop="@dimen/_30sdp">
 
         <LinearLayout
             android:id="@+id/btn_share"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginStart="@dimen/_40sdp"
-            android:layout_marginEnd="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_60sdp"
+            android:layout_marginEnd="@dimen/_60sdp"
             android:background="@drawable/next_btn_shape"
-            android:backgroundTint="@color/next_btn_color"
-            android:layout_centerInParent="true">
+            android:backgroundTint="@color/next_btn_color">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="30dp"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="Share your score!"/>
+                android:text="Chơi lại!"
+                android:textColor="@color/white"
+                android:textSize="30dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_view_score"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/btn_share"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/_60sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_60sdp"
+            android:gravity="center"
+            android:background="@drawable/view_high_score_btn">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_20sdp"
+                android:text="Xem điểm người chơi"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                android:layout_gravity="center"/>
+
 
         </LinearLayout>
 
@@ -106,7 +130,7 @@
         android:gravity="center">
         <ImageView
             android:layout_width="@dimen/_250sdp"
-            android:layout_height="@dimen/_250sdp"
+            android:layout_height="@dimen/_200sdp"
             android:background="@drawable/congrtulation"/>
     </RelativeLayout>
 

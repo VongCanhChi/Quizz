@@ -20,6 +20,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class DashboardActivity extends AppCompatActivity {
@@ -33,7 +35,7 @@ public class DashboardActivity extends AppCompatActivity {
 
     public ModelClass modelClass;
     int index = 0;
-    TextView card_quetion, optiona, optionb, optionc, optiond;
+    TextView card_quetion, optiona, optionb, optionc, optiond, tvTimeCount;
     CardView cardOA, cardOB, cardOC, cardOD;
 
     int correctCount = 0;
@@ -44,6 +46,11 @@ public class DashboardActivity extends AppCompatActivity {
     MediaPlayer correctSound;
     MediaPlayer wrongSound;
     MediaPlayer winSound;
+    MediaPlayer clickSound;
+
+    Timer timer;
+    TimerTask timerTask;
+    double time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +65,6 @@ public class DashboardActivity extends AppCompatActivity {
 //        listOfQuestions.add(new ModelClass("What is the highest mountain in the world.", "Everest", "Phanxiphan", "An-det", "Mariana", "Everest"));
 ////
 
-        System.out.println(listOfQuestions.size());
-
         allQuetionsList = (ArrayList<ModelClass>) listOfQuestions.clone();
         System.out.println(allQuetionsList.size());
         Collections.shuffle(allQuetionsList);
@@ -70,6 +75,7 @@ public class DashboardActivity extends AppCompatActivity {
         correctSound = MediaPlayer.create(DashboardActivity.this, R.raw.correct);
         wrongSound = MediaPlayer.create(DashboardActivity.this, R.raw.wrong_5);
         winSound = MediaPlayer.create(DashboardActivity.this, R.raw.win_game);
+        clickSound = MediaPlayer.create(DashboardActivity.this, R.raw.click);
 
         countDownTimer = new CountDownTimer(7000,1000) {
             @Override
@@ -94,6 +100,16 @@ public class DashboardActivity extends AppCompatActivity {
                 dialog.show();
             }
         }.start();
+
+        timer = new Timer();
+
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                // Stuff that updates the UI
+                startTimer();
+            }
+        });
     }
 
     private void setAllData() {
@@ -119,6 +135,7 @@ public class DashboardActivity extends AppCompatActivity {
         cardOD=findViewById (R.id.cardD);
 
         nextBtn = findViewById(R.id.next_btn);
+        tvTimeCount = findViewById(R.id.tv_time_count);
     }
 
     public void Correct() {
@@ -150,6 +167,7 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 wrongCount++;
+                clickSound.start();
                 if (index < listOfQuestions.size() - 1) {
                     index++;
                     modelClass = listOfQuestions.get(index);
@@ -270,5 +288,35 @@ public class DashboardActivity extends AppCompatActivity {
     public void backToMenu(View view) {
         Intent intent = new Intent(DashboardActivity.this, MainActivity.class);
         startActivity(intent);
+    }
+
+    //Solve error: Only the original thread that created a view hierarchy can touch its views
+    private void setText(final TextView text,final String value){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                text.setText(value);
+            }
+        });
+    }
+    public void startTimer(){
+        timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                time++;
+                setText(tvTimeCount, getTimerText());
+            }
+        };
+        timer.scheduleAtFixedRate(timerTask, 0, 1000);
+    }
+    private String getTimerText() {
+        int rounded = (int) Math.round(time);
+        int seconds = ((rounded % 86400) % 3600) % 60;
+        int minutes = ((rounded % 86400) % 3600) / 60;
+        return  formatTime(seconds, minutes);
+    }
+
+    private String formatTime(int seconds, int minutes) {
+        return  String.format("%02d", minutes) + ":" + String.format("%02d", seconds);
     }
 }
